@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Emitir Voto">
+        <div class="slds-p-around_medium">
+            <!-- Lista desplegable para seleccionar el candidato -->
+            <lightning-combobox label="Seleccionar Candidato" options={candidateOptions} value={selectedCandidate} onchange={handleCandidateChange}></lightning-combobox>
+
+            <!-- Botón para emitir el voto -->
+            <lightning-button label="Votar" onclick={handleVote}></lightning-button>
+
+            <!-- Mensaje de error o éxito -->
+            <template if:true={message}>
+                <p>{message}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
